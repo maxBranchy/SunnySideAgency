@@ -1,0 +1,109 @@
+@use "variables";
+.clients__testimonials {
+  padding: 6em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .testimonials__tittle {
+    font-family: variables.$font-tittles;
+    color: variables.$very-dark-grayish-blue;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 2.5em;
+  }
+
+  .clients__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .client {
+      //   border: 1px solid magenta;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em 0 1em 0;
+
+      &__img {
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        margin-top: 3em;
+      }
+    }
+    .testimonial {
+      &__paragraph {
+        font-family: variables.$font-texts;
+        color: variables.$very-dark-grayish-blue;
+        text-align: center;
+        font-size: 1.2rem;
+        width: 80%;
+        line-height: 1.5;
+        //   padding-bottom: 3em;
+        margin: 1.5em auto 1.5em auto;
+      }
+      &__name {
+        font-family: variables.$font-tittles;
+        color: variables.$very-dark-desaturated-blue;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 1em;
+      }
+      &__position {
+        font-family: variables.$font-texts;
+        color: variables.$very-dark-grayish-blue;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .clients__testimonials {
+    .testimonials__tittle {
+      font-size: 2rem;
+    }
+    .clients__wrapper {
+      flex-direction: column;
+      flex-flow: row;
+
+      .testimonial {
+        &__paragraph {
+          width: 70%;
+          font-size: 1.4rem;
+        }
+        &__name {
+          font-size: 1.5rem;
+        }
+        &__position {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .clients__testimonials {
+    .clients__wrapper {
+      .client {
+        &__img {
+          width: 6em;
+          height: 6em;
+        }
+      }
+    }
+  }
+}

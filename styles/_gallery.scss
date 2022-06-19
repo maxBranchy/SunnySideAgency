@@ -1,0 +1,22 @@
+.gallery {
+  .img--desktop {
+    display: none;
+    width: 100%;
+  }
+  .img--mobile {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  display: grid;
+  grid-template-areas:
+    "g1 g2"
+    "g3 g4";
+}
+
+@media screen and (min-width: 1260px) {
+  .gallery {
+    grid-template-rows: 1fr;
+    grid-template-areas: "g1 g2 g3 g4";
+  }
+}

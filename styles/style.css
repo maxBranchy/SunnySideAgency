@@ -1,0 +1,556 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background-image: url("../images/mobile/image-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.hero .hero__navbar {
+  padding-bottom: 10em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero .hero__navbar .nav__logo {
+  width: 50%;
+  max-width: 16em;
+}
+.hero .hero__navbar .nav__hamburguer {
+  width: 30px;
+  height: 30px;
+  transition: all 0.4s ease;
+}
+.hero .hero__navbar .hide {
+  opacity: 0.5;
+}
+.hero .hero__navbar .menu__layout {
+  display: none;
+}
+.hero .hero__navbar .menu-mobile {
+  position: absolute;
+  top: 8rem;
+  left: 6%;
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.hero .hero__navbar .menu-mobile .triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 2.5rem solid hsl(0deg, 0%, 100%);
+  border-left: 2.5rem solid transparent;
+}
+.hero .hero__navbar .menu-mobile .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 4.2em 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.hero .hero__navbar .menu-mobile .menu .nav__link {
+  font-size: 1.5rem;
+  font-family: "Barlow", sans-serif;
+  color: hsl(213deg, 9%, 39%);
+  padding: 1em;
+  text-align: center;
+}
+.hero .hero__navbar .menu-mobile .menu .nav__link:hover {
+  color: hsl(212deg, 27%, 19%);
+}
+.hero .hero__navbar .menu-mobile .menu .nav__link--active {
+  font-family: "Fraunces", serif;
+  color: hsl(212deg, 27%, 19%);
+  background-color: hsl(51deg, 100%, 49%);
+  font-size: 1.2rem;
+  padding: 1em 1.6em 1em 1.6em;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.hero .hero__navbar .menu-mobile .menu .nav__link--active:hover {
+  color: hsl(213deg, 9%, 39%);
+  background-color: hsla(51deg, 100%, 49%, 0.699);
+}
+.hero .hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero .hero__text .hero__tittle {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+}
+.hero .hero__text .hero__icon {
+  height: 100%;
+  padding: 4em;
+}
+.hero .hero__text .hero__icon .hero__arrow {
+  width: 60px;
+  height: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    background-image: url("../images/desktop/image-header.jpg");
+  }
+  .hero .hero__navbar {
+    padding-bottom: 5em;
+  }
+  .hero .hero__navbar .menu__layout {
+    display: block;
+  }
+  .hero .hero__navbar .menu__layout .triangle {
+    display: none;
+  }
+  .hero .hero__navbar .menu__layout .menu {
+    display: flex;
+    flex-direction: row;
+  }
+  .hero .hero__navbar .menu__layout .menu .nav__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
+  .hero .hero__navbar .menu__layout .menu .nav__links .nav__item {
+    padding: 1.5em;
+  }
+  .hero .hero__navbar .menu__layout .menu .nav__links .nav__item .nav__link {
+    color: hsl(0deg, 0%, 100%);
+    font-family: "Barlow", sans-serif;
+    font-size: 1.2rem;
+  }
+  .hero .hero__navbar .menu__layout .menu .nav__links .nav__item .nav__link--active {
+    font-family: "Fraunces", serif;
+    color: hsl(212deg, 27%, 19%);
+    background-color: hsl(0deg, 0%, 100%);
+    font-size: 1rem;
+    padding: 1em 2em 1em 2em;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .hero .hero__navbar .nav__hamburguer {
+    display: none;
+  }
+}
+.middle__section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.middle__section .img--desktop {
+  display: none;
+  width: 100%;
+}
+.middle__section .img--mobile {
+  display: block;
+  width: 100%;
+}
+.middle__section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6em 2.5em;
+}
+.middle__section .container__tittle {
+  font-family: "Fraunces", serif;
+  color: hsl(212deg, 27%, 19%);
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.middle__section .container__paragraph {
+  font-family: "Barlow", sans-serif;
+  color: hsl(213deg, 9%, 39%);
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  line-height: 1.5;
+  padding-bottom: 2em;
+}
+.middle__section .container__btn .container__btn--act {
+  font-family: "Fraunces", serif;
+  color: hsl(212deg, 27%, 19%);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.middle__section .container__btn .link__decoration {
+  position: relative;
+  width: 100%;
+  height: 0.6em;
+  transform: translateY(-0.5em);
+  z-index: -1;
+  border-radius: 20px;
+  background-color: hsl(51deg, 100%, 49%);
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+.middle__section .container__btn:hover .link__decoration {
+  background-color: hsl(7deg, 99%, 70%);
+}
+.middle__section .block__wrapper {
+  position: relative;
+}
+.middle__section .block__wrapper .text__block {
+  position: absolute;
+  z-index: 1;
+  top: 65%;
+  padding: 0 2em;
+}
+.middle__section .block__wrapper .text__block .block__tittle {
+  font-family: "Fraunces", serif;
+  color: hsl(212deg, 27%, 19%);
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.middle__section .block__wrapper .text__block .block__paragraph {
+  font-family: "Barlow", sans-serif;
+  color: hsl(212deg, 27%, 19%);
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 1024px) {
+  .middle__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "g2 g1" "g3 g4";
+  }
+  .middle__section .img--mobile {
+    display: none;
+  }
+  .middle__section .img--desktop {
+    display: block;
+  }
+  .middle__section .g1 {
+    grid-area: g1;
+  }
+  .middle__section .g2 {
+    grid-area: g2;
+  }
+  .middle__section .g3 {
+    grid-area: g3;
+  }
+  .middle__section .g4 {
+    grid-area: g4;
+  }
+  .middle__section .container {
+    padding: 0;
+  }
+  .middle__section .container__text {
+    width: 60%;
+  }
+  .middle__section .container__tittle {
+    text-align: left;
+    font-size: 2rem;
+  }
+  .middle__section .container__paragraph {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding-bottom: 2em;
+  }
+  .middle__section .block__wrapper .text__block {
+    top: 60%;
+    padding: 0 3em;
+  }
+  .middle__section .block__wrapper .text__block .block__tittle {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+  .middle__section .block__wrapper .text__block .block__paragraph {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .middle__section .container__text {
+    width: 60%;
+  }
+  .middle__section .container__tittle {
+    font-size: 3rem;
+  }
+  .middle__section .container__paragraph {
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    padding-bottom: 2em;
+  }
+  .middle__section .container .container__btn .container__btn--act {
+    font-size: 1.2rem;
+  }
+  .middle__section .block__wrapper .text__block {
+    top: 60%;
+    padding: 0 4em;
+  }
+  .middle__section .block__wrapper .text__block .block__tittle {
+    font-size: 3rem;
+    margin-bottom: 0.7em;
+  }
+  .middle__section .block__wrapper .text__block .block__paragraph {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+.clients__testimonials {
+  padding: 6em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.clients__testimonials .testimonials__tittle {
+  font-family: "Fraunces", serif;
+  color: hsl(213deg, 9%, 39%);
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 2.5em;
+}
+.clients__testimonials .clients__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.clients__testimonials .clients__wrapper .client {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0 1em 0;
+}
+.clients__testimonials .clients__wrapper .client__img {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin-top: 3em;
+}
+.clients__testimonials .clients__wrapper .testimonial__paragraph {
+  font-family: "Barlow", sans-serif;
+  color: hsl(213deg, 9%, 39%);
+  text-align: center;
+  font-size: 1.2rem;
+  width: 80%;
+  line-height: 1.5;
+  margin: 1.5em auto 1.5em auto;
+}
+.clients__testimonials .clients__wrapper .testimonial__name {
+  font-family: "Fraunces", serif;
+  color: hsl(212deg, 27%, 19%);
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.clients__testimonials .clients__wrapper .testimonial__position {
+  font-family: "Barlow", sans-serif;
+  color: hsl(213deg, 9%, 39%);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .clients__testimonials .testimonials__tittle {
+    font-size: 2rem;
+  }
+  .clients__testimonials .clients__wrapper {
+    flex-direction: column;
+    flex-flow: row;
+  }
+  .clients__testimonials .clients__wrapper .testimonial__paragraph {
+    width: 70%;
+    font-size: 1.4rem;
+  }
+  .clients__testimonials .clients__wrapper .testimonial__name {
+    font-size: 1.5rem;
+  }
+  .clients__testimonials .clients__wrapper .testimonial__position {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .clients__testimonials .clients__wrapper .client__img {
+    width: 6em;
+    height: 6em;
+  }
+}
+.gallery {
+  display: grid;
+  grid-template-areas: "g1 g2" "g3 g4";
+}
+.gallery .img--desktop {
+  display: none;
+  width: 100%;
+}
+.gallery .img--mobile {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media screen and (min-width: 1260px) {
+  .gallery {
+    grid-template-rows: 1fr;
+    grid-template-areas: "g1 g2 g3 g4";
+  }
+}
+.footer {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(168deg, 46%, 46%, 0.623);
+  padding: 3em;
+}
+.footer__logo {
+  padding: 2em;
+  width: 20em;
+}
+.footer__links {
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.footer__links .footer__link {
+  font-size: 1.2rem;
+  font-family: "Barlow", sans-serif;
+  color: hsl(213deg, 9%, 39%);
+  padding: 1em;
+  text-align: center;
+}
+.footer__links .footer__link:hover {
+  color: hsl(212deg, 27%, 19%);
+}
+.footer__media {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+.footer__media .footer__icon {
+  padding: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer .footer__logo {
+    width: 30em;
+  }
+  .footer__links .footer__link {
+    font-size: 1.5rem;
+  }
+  .footer__media .footer__icon {
+    width: 4em;
+  }
+}
+/*
+font-family: 'Barlow', sans-serif;
+font-family: 'Fraunces', serif;
+*//*# sourceMappingURL=style.css.map */
